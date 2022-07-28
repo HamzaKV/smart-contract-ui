@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/hamza/Documents/Repos/smart-contract-ui/app/routes/web3-tx.ts?browser"],
-  "sourcesContent": ["module.exports = {};"],
-  "mappings": ";;;;;;AAAA;AAAA;AAAA;AAAA,WAAO,UAAU;AAAA;AAAA;",
-  "names": []
-}

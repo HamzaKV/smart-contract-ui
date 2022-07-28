@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/hamza/Documents/Repos/smart-contract-ui/app/root.tsx?browser", "../../app/root.tsx"],
-  "sourcesContent": ["export { default, meta } from \"/Users/hamza/Documents/Repos/smart-contract-ui/app/root.tsx\";", "import type { MetaFunction } from '@remix-run/node';\nimport {\n    Links,\n    LiveReload,\n    Meta,\n    Outlet,\n    Scripts,\n    ScrollRestoration,\n} from '@remix-run/react';\n\nexport const meta: MetaFunction = () => ({\n    charset: 'utf-8',\n    title: 'New Remix App',\n    viewport: 'width=device-width,initial-scale=1',\n});\n\nexport default function App() {\n    return (\n        <html lang='en'>\n            <head>\n                <Meta />\n                <Links />\n            </head>\n            <body>\n                <Outlet />\n                <ScrollRestoration />\n                <Scripts />\n                <LiveReload />\n            </body>\n        </html>\n    );\n}\n"],
-  "mappings": ";;;;;;;;;;;;;;AAAA;;;ACAA;AAUO,IAAM,OAAqB,MAAO;AAAA,EACrC,SAAS;AAAA,EACT,OAAO;AAAA,EACP,UAAU;AAAA;AAGC,eAAe;AAC1B,SACI,oCAAC,QAAD;AAAA,IAAM,MAAK;AAAA,KACP,oCAAC,QAAD,MACI,oCAAC,MAAD,OACA,oCAAC,OAAD,QAEJ,oCAAC,QAAD,MACI,oCAAC,QAAD,OACA,oCAAC,mBAAD,OACA,oCAAC,SAAD,OACA,oCAAC,YAAD;AAAA;",
-  "names": []
-}
