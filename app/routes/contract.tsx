@@ -1,5 +1,5 @@
 import { ActionFunction, json } from '@remix-run/node';
-import { Form, useActionData, useFetcher, useNavigate } from '@remix-run/react';
+import { useActionData, useFetcher, useNavigate } from '@remix-run/react';
 import { Fragment, useMemo, useState } from 'react';
 
 export const action: ActionFunction = async ({ request }) => {
@@ -41,7 +41,7 @@ export default () => {
                             const { name: n, type } = v;
 
                             return (
-                                <Fragment  key={k}>
+                                <Fragment key={k}>
                                     <label>
                                         {n || 'Arg'} - ({type}):
                                         <input
