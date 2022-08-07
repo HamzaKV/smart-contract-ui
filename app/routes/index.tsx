@@ -3,7 +3,7 @@ import { Form } from '@remix-run/react';
 export default () => {
     return (
         <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-            <h1>Smart Contract Interaction</h1>
+            <h1>Smart Contract Interaction Hamza</h1>
             <Form method='post' action='/contract'>
                 <label>
                     RPC URL:
