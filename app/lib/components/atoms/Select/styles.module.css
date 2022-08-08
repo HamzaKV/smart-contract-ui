@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    position: relative;
+    border-radius: 8px;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.input {
+    flex: 1;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: inherit;
+    width: 100%;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+.input:focus {
+    outline: none;
+}
+.input:hover {
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.15);
+}
+
+/* For IE <= 11 */
+.input::-ms-expand {
+    display: none;
+}
+
+.iconContainer {
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    margin-right: 10px;
+}

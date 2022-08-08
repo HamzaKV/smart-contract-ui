@@ -1,0 +1,28 @@
+.carouselContainer {
+    position: relative;
+}
+
+.carouselButton {
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.carouselButton:hover {
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.15);
+}
+
+.carouselButtonLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carouselButtonRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

@@ -1,0 +1,8 @@
+.actionView {
+    background: #007aff;
+}
+
+.actionView:hover {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); */
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.15);
+}
