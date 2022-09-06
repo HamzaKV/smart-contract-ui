@@ -625,17 +625,12 @@ video {
   resize: both;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-2 {
   border-width: 2px;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+.border {
+  border-width: 1px;
 }
 
 .text-2xl {
@@ -643,17 +638,8 @@ video {
   line-height: 2rem;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-bold {
   font-weight: 700;
-}
-
-.text-slate-900 {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
 .overline {

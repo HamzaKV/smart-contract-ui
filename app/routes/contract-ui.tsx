@@ -26,7 +26,7 @@ export default () => {
 
     return (
         <div>
-            <button onClick={() => navigate('/')}>Go Back</button>
+            <button onClick={() => navigate(-1)}>Go Back</button>
             <br />
             <br />
             {abi?.map((data: any, key: number) => {
