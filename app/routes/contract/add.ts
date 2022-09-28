@@ -13,8 +13,8 @@ export const action: ActionFunction = async ({ request }) => {
         {
             name,
             address,
-            chainId,
-            jsonAbi,
+            chain_id: chainId,
+            json_abi: jsonAbi,
         },
     ]);
 

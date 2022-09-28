@@ -15,7 +15,7 @@ export default () => {
                 </label>
                 <label className='w-full'>
                     Contract Abi:<br/>
-                    <textarea name='contractAbi' id='contractAbi' className='w-full text-black border-2' />
+                    <textarea rows={10} name='contractAbi' id='contractAbi' className='w-full text-black border-2' />
                 </label>
                 <label className='w-full'>
                     Private Key:<br/>

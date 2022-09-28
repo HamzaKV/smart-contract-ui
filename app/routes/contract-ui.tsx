@@ -31,16 +31,24 @@ export default () => {
     }, [fetcher.data]);
 
     return (
-        <div className='flex min-h-screen text-white bg-slate-600'>
-            <div className='flex flex-col items-center justify-center grow'>
-                <button className='px-4 py-2 text-white border-2 hover:bg-slate-700 w-72' onClick={() => navigate(-1)}>Go Back</button>
+        <div className='flex h-screen overflow-hidden text-white bg-slate-600'>
+            <div className='flex flex-col items-center h-full py-4 overflow-auto grow'>
+                <button
+                    className='px-4 py-2 text-white border-2 hover:bg-slate-700 w-72'
+                    onClick={() => navigate(-1)}
+                >
+                    Go Back
+                </button>
                 {abi?.map((data: any, key: number) => {
                     const { name, stateMutability, inputs, type: t } = data;
 
                     if (t === 'constructor' || t === 'event') return null;
 
                     return (
-                        <div key={key} className='flex flex-col items-center justify-center gap-3 w-72 mt-7'>
+                        <div
+                            key={key}
+                            className='flex flex-col items-center justify-center gap-3 w-72 mt-7'
+                        >
                             <h1>{name}</h1>
                             {inputs.map((v: any, k: number) => {
                                 const { name: n, type } = v;
@@ -48,17 +56,20 @@ export default () => {
                                 return (
                                     <Fragment key={k}>
                                         <label className='w-full'>
-                                            {n || 'Arg'} - ({type}):<br/>
+                                            {n || 'Arg'} - ({type}):
+                                            <br />
                                             <input
                                                 className='w-full text-black border-2'
                                                 type='text'
                                                 name={n}
                                                 id={n}
                                                 onChange={(e) =>
-                                                    setState((prev: string[]) => [
-                                                        ...prev,
-                                                        e.target.value,
-                                                    ])
+                                                    setState(
+                                                        (prev: string[]) => [
+                                                            ...prev,
+                                                            e.target.value,
+                                                        ]
+                                                    )
                                                 }
                                             />
                                         </label>
@@ -68,15 +79,20 @@ export default () => {
                             <button
                                 className='flex flex-col items-center justify-center gap-3 border-2 w-72'
                                 onClick={() =>
-                                    fetcher.submit({
-                                        ...actionData,
-                                        call: String(stateMutability === 'view'),
-                                        method: name,
-                                        args: JSON.stringify(state),
-                                    }, {
-                                        method: 'post',
-                                        action: '/transaction'
-                                    })
+                                    fetcher.submit(
+                                        {
+                                            ...actionData,
+                                            call: String(
+                                                stateMutability === 'view'
+                                            ),
+                                            method: name,
+                                            args: JSON.stringify(state),
+                                        },
+                                        {
+                                            method: 'post',
+                                            action: '/transaction',
+                                        }
+                                    )
                                 }
                             >
                                 Submit
@@ -85,12 +101,14 @@ export default () => {
                     );
                 })}
             </div>
-            <div className='bg-black grow p-14 max-w-[50%] truncate'>
-                {fetcher.state === 'submitting'&& (
+            <div className='bg-black grow p-14 max-w-[50%] truncate h-screen overflow-auto'>
+                {fetcher.state === 'submitting' && (
                     <pre className='text-white'>Submitting...</pre>
                 )}
                 {fetcher.type === 'done' && fetcher.data && (
-                    <pre className='text-white'>{JSON.stringify(fetcher.data, null, 2)}</pre>
+                    <pre className='text-white'>
+                        {JSON.stringify(fetcher.data, null, 2)}
+                    </pre>
                 )}
             </div>
         </div>
