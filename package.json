@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "0.0.0",
   "sideEffects": false,
   "scripts": {
     "build": "run-s \"build:*\"",
@@ -11,7 +12,20 @@
     "generate:css": "npx tailwindcss -o ./app/styles/tailwind.css",
     "start": "remix-serve build",
     "serve": "yarn build && pm2 start server/index.js",
-    "stop": "pm2 stop all && pm2 delete all"
+    "stop": "pm2 stop all && pm2 delete all",
+    "git:main:pull": "git checkout \"master\"",
+    "git:deploy:pull": "git checkout \"deploy\"",
+    "git:main:push": "git push -u origin \"master\"",
+    "git:deploy:push": "git push -u origin \"deploy\"",
+    "git:main:merge": "git merge \"master\"",
+    "patch": "yarn git:main:pull && yarn version --patch && yarn git:main:push",
+    "minor": "yarn git:main:pull && yarn version --minor && yarn git:main:push",
+    "major": "yarn git:main:pull && yarn version --major && yarn git:main:push",
+    "roll": "yarn roll:deploy:patch && yarn roll:deploy",
+    "roll:deploy": "yarn git:deploy:pull && yarn git:main:merge && yarn git:deploy:push",
+    "roll:deploy:patch": "yarn patch && yarn roll:deploy && yarn git:main:pull",
+    "roll:deploy:minor": "yarn minor && yarn roll:deploy && yarn git:main:pull",
+    "roll:deploy:major": "yarn major && yarn roll:deploy && yarn git:main:pull"
   },
   "dependencies": {
     "@remix-run/node": "^1.6.4",
